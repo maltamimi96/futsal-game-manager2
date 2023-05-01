@@ -45,13 +45,13 @@ const FutsalField = () => {
   }
 
   return (
-    <div className="h-fit w-full border-gray-700 bg-cyan-500   ">
-      <section
+    <div className=" border-gray-700 bg-cyan-500   ">
+      <div
         className="p-6"
         style={{
           backgroundImage: `url(${pattern5})`,
         }}>
-        <div className="flex gap-4 justify-between items-center md:items-start flex-col md:flex-row ">
+        <div className="  flex gap-4 justify-between items-center md:items-start flex-col md:flex-row ">
           <div className=" rounded-lg flex flex-col md:flex-row">
             <button
               className=" px-4 py-2 text-red-900 font-semibold   rounded-full"
@@ -78,10 +78,10 @@ const FutsalField = () => {
             <h1>Time {time}</h1>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section
-        className="bg-green-500 flex flex-col gap-6 md:gap-20 justify-between items-center h-full mx-auto drop-shadow-2xl border-b-8 border-white"
+      <div
+        className=""
         style={{
           backgroundImage: `url("https://images.unsplash.com/photo-1546608235-3310a2494cdf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2138&q=80")`,
         }}>
@@ -257,9 +257,40 @@ const FutsalField = () => {
             </Player>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   )
 }
 
 export default FutsalField
+{
+  /* <section>
+<div className="grid grid-cols-7 grid-rows-5 gap-0">
+  <div className="bg-gray-500 col-start-4 col-end-5 row-start-1 row-end-2">
+    <Player name={players[0]} index={1}>
+      {players[0] === "" ? (
+        <Modal text={"Join"} setName={handlePlayerChange} index={0} />
+      ) : (
+        <button
+          className="text-white bg-green-500 rounded-full active:bg-pink-600 font-bold  md:text-xl px-8 py-1  shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          onClick={() => handleDropOut(0)}>
+          Drop Out
+        </button>
+      )}
+    </Player>
+  </div>
+  <div className="bg-gray-500 col-start-2 col-end-3 row-start-2 row-end-3">
+    1
+  </div>
+  <div className="bg-gray-500 col-start-6 col-end-7 row-start-2 row-end-3">
+    1
+  </div>
+  <div className="bg-gray-500 col-start-4 col-end-5 row-start-3 row-end-4">
+    1
+  </div>
+  <div className="bg-gray-500 col-start-4 col-end-5 row-start-4 row-end-5">
+    1
+  </div>
+</div>
+</section> */
+}
