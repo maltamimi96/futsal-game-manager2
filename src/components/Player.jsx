@@ -1,6 +1,3 @@
-import pattern2 from "../assets/images/pattern2.png"
-import pattern4 from "../assets/images/pattern4.png"
-import pattern5 from "../assets/images/pattern5.png"
 import pattern6 from "../assets/images/pattern6.png"
 import pattern7 from "../assets/images/pattern7.png"
 

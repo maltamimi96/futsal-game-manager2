@@ -40,7 +40,7 @@ export default function Modal({ text, setName, index }) {
                     Add Your Name
                   </p>
                   <input
-                    className="bg-gray-300 border-none font-normal appearance-none focus:outline-none rounded-md py-2    pl-2  placeholder:dark:text-gray-300 placeholder:pl-2 placeholder:font-normal focus:dark:text-gray-100 focus:pl-2 "
+                    className="bg-gray-200 border-none text-gray-700 font-normal appearance-none focus:outline-none rounded-md py-2    pl-2   placeholder:pl-2 placeholder:font-normal focus:text-gray-700 focus:pl-2 "
                     value={playerName}
                     onChange={(event) => setPlayerName(event.target.value)}
                   />
