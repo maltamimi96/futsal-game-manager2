@@ -1,15 +1,19 @@
 import FutsalField from "./components/FutsalField"
+import Layout from "./components/Layout"
 import Navbar from "./components/Navbar"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 function App() {
   return (
     <>
-      <Navbar />
-      <main>
-        <section className="">
-          <FutsalField />
-        </section>
-      </main>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<FutsalField />} />
+            <Route path="/a" element={<Navbar />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
     </>
   )
 }

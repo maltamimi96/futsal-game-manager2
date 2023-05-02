@@ -9,9 +9,9 @@ function Navbar() {
   }
 
   return (
-    <nav className="navbar w-full relative  ">
-      <div className=" grid grid-cols-2 justify-items-stretch items-center justify-center px-4 md:px-8 py-4 bg-slate-600">
-        <div className="relative">
+    <nav className="navbar w-full relative drop-shadow-md  ">
+      <div className=" grid grid-cols-2 justify-items-stretch items-center justify-center px-4 md:px-8 py-2 bg-slate-200">
+        <div className="relative ">
           <h1 className="text-4xl font-extrabold text-cyan-600 italic tracking-[20px]">
             FGM
           </h1>

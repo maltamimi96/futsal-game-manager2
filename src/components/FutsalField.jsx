@@ -2,6 +2,7 @@ import { useState } from "react"
 import Player from "./Player"
 import Modal from "./Modal"
 import { FaPlusCircle, FaTrashAlt } from "react-icons/fa"
+import BottomNav from "./BottomNav"
 
 const FutsalField = () => {
   const [players, setPlayers] = useState([
@@ -19,7 +20,14 @@ const FutsalField = () => {
 
   const [date, setDate] = useState(new Date())
   const [time, setTime] = useState()
+  const [isFixedDivVisible, setIsFixedDivVisible] = useState(false)
+  const handleMouseEnter = () => {
+    setIsFixedDivVisible(true)
+  }
 
+  const handleMouseLeave = () => {
+    setIsFixedDivVisible(false)
+  }
   const handlePlayerChange = (id, input) => {
     const updatedArray = [...players]
     updatedArray[id] = input
@@ -44,15 +52,25 @@ const FutsalField = () => {
   const handleNewPlayer = () => {
     setPlayers([...players, ""])
   }
+  const handleRemoveLastPlayer = () => {
+    const updatedPlayers = [...players]
+    if (updatedPlayers.length < 11) {
+      return
+    }
+    updatedPlayers.pop()
+    setPlayers(updatedPlayers)
+  }
   return (
     <div className="relative  ">
       <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className=" md:bg-cover bg-center p-2  "
         style={{
           backgroundImage: `url("https://images.unsplash.com/photo-1546608235-3310a2494cdf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2138&q=80")`,
         }}>
         {/* //reset button */}
-        <div className=" fixed bottom-0 right-2 rounded-lg flex flex-col md:flex-row w-fit">
+        {/* <div className=" fixed bottom-0 right-2 rounded-lg flex flex-col md:flex-row w-fit">
           <button
             className="md:ml-4 md:px-4 py-1 rounded-sm md:text-2xl text-red-600  flex items-center gap-6"
             onClick={handleNewPlayer}>
@@ -63,6 +81,14 @@ const FutsalField = () => {
             onClick={handleReset}>
             <FaTrashAlt className="text-6xl   opacity-75" />
           </button>
+        </div> */}
+
+        <div className={` ${isFixedDivVisible ? "" : "hidden"}`}>
+          <BottomNav
+            add={handleNewPlayer}
+            remove={handleRemoveLastPlayer}
+            reload={handleReset}
+          />
         </div>
 
         <div className="text-4xl  w-full flex justify-between gap-2 mb-5 overflow-hidden xl:px-10">
@@ -108,7 +134,7 @@ const FutsalField = () => {
                   />
                 ) : (
                   <button
-                    className="text-white bg-green-500 rounded-full active:bg-pink-600 font-bold  md:text-xl px-8 py-1  shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    className="text-white bg-red-500 rounded-full active:bg-pink-600 font-bold  md:text-xl px-8 py-1  shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     onClick={() => handleDropOut(index)}>
                     Drop Out
                   </button>
